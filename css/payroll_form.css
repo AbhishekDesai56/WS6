@@ -100,4 +100,25 @@ label {
 }
 
 
+.profile-radio-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-radio-content > label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile {
+    width: 40px;
+    margin-left: 12px;
+}
+
+img {
+    border-radius: 50%;
+    max-width:50%;
+}
+
 
