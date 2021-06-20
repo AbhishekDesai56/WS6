@@ -25,8 +25,9 @@
                 <div class="row-content">
                     <label for="name" class="label text">Name</label>
                     <input type="text" name="name" id="name" class="input" placeholder="Your name.." required>
+                    <span class="text-error" for="text"></span>
                 </div>
-                <div class="row-content">
+                <div class="row-content text-error">
                     <label for="profile" class="label text">Profile Image</label>
                     <div class="profile-radio-content">
                         <label>
@@ -92,7 +93,7 @@
                 </div>
                 <div class="row-content">
                     <label for="startDate" class="label text">Start Date</label>
-                    <div>
+                    <div id="date">
                         <select name="Day" id="day">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -148,6 +149,7 @@
                             <option value="2017">2017</option>
                         </select>
                     </div>
+                    <span class="text-error-date" for="text"></span>
                 </div>
                 <div class="row-content">
                     <label for="notes" class="label text">Notes</label>

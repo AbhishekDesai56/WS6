@@ -1,12 +1,5 @@
 class EmployeePayrollData {
-    constructor(...params) {
-        this.id = params[0];
-        this.name = params[1];
-        this.salary = params[2];
-        this.gender = params[3];
-        this.department = params[4];
-        this.startDate = params[5];
-    }
+ 
 
     get id() { return this._id; }
     set id(id) {
@@ -15,7 +8,10 @@ class EmployeePayrollData {
 
     get name() { return this._name }
     set name(name) {
-        this._name = name;
+        let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z//s]{2,}$');
+        if(nameRegex.test(name)) {
+            this._name = name;
+        } else throw 'Name is Incorrect!';
     }
 
     get profilePic() { return this._profilePic }
@@ -35,6 +31,10 @@ class EmployeePayrollData {
 
     get startDate() { return this._startDate }
     set startDate(startDate) {
+        let now = new Date();
+        if(startDate > now) throw 'Start Date is a future Date';
+        var diff = Math.abs(now.getTime() - startDate.getTime());
+        if (diff / (1000 * 60 * 60 * 24) > 30) throw 'Start Date is beyond 30 Days!'
         this._startDate = startDate;
     }
 
